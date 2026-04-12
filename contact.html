@@ -1,11 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<section id="kontak">
+  <h2>Hubungi Saya</h2>
+  <p>jika memiliki pesan, bisa isi dibawah ini:</p>
+
+  <form action="#" method="post">
+    <div>
+      <label for="nama">Nama Lengkap:</label><br />
+      <input
+        type="text"
+        id="nama"
+        name="nama"
+        placeholder="Masukkan nama Anda"
+        required
+      />
+    </div>
+    <br />
+
+    <div>
+      <label for="email">Alamat Email:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="contoh@email.com"
+        required
+      />
+    </div>
+    <br />
+
+    <div>
+      <label for="subjek">Subjek:</label><br />
+      <select id="subjek" name="subjek">
+        <option value="umum">Pertanyaan Umum</option>
+        <option value="kerjasama">Tawaran Kerjasama</option>
+        <option value="tugas">Diskusi Tugas</option>
+      </select>
+    </div>
+    <br />
+
+    <div>
+      <label for="pesan">Isi Pesan:</label><br />
+      <textarea
+        id="pesan"
+        name="pesan"
+        rows="5"
+        cols="30"
+        placeholder="Tuliskan pesanmu di sini..."
+      ></textarea>
+    </div>
+    <br />
+
+    <div>
+      <button type="submit">Kirim Pesan</button>
+      <button type="reset">Hapus Input</button>
+    </div>
+  </form>
+</section>
