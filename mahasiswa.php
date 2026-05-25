@@ -10,47 +10,48 @@
     <hr />
     <table border="1" cellspacing="0" cellpadding="10">
       <tr>
-        <td><a href="index.html"> Home </a></td>
-        <td><a href="profile.html">Profil</a></td>
-        <td><a href="contact.html">Contact </a></td>
-        <td><a href="mahasiswa.html"> Data Mahasiswa </a></td>
+        <td><a href="index.php"> Home </a></td>
+        <td><a href="profile.php">Profil</a></td>
+        <td><a href="contact.php">Contact </a></td>
+        <td><a href="mahasiswa.php"> Data Mahasiswa </a></td>
       </tr>
     </table>
     <h3>data mahasiswa</h3>
 
-    <a href="inputdata.html"><button>Tambah Data Mahasiswa</button></a>
+    <a href="inputdata.php"><button>Tambah Data Mahasiswa</button></a>
 <br>
     <br>
     <table border="1" cellspadding="10">
       <tr>
-        <th rowspan="2">Nomer</th>
-        <th rowspan="2">Nama</th>
-        <th colspan="3" align="center">nilai</th>
-        <th rowspan="2">Foto</th>
+        <th >No</th>
+        <th >Nama</th>
+        <th >NIM</th>
+        <th>jurusan</th>
+        <th>email</th>
+        <th>no_hp</th>
+        <th >Foto</th>
+        <th>aksi</th>
         <!-- <th>baris 1, kolom 2</th> -->
-      </tr>
-      <tr>
-        <th>UTS</th>
-        <th>UAS</th>
-        <th>TUGAS</th>
-        <!-- <th>baris 2, kolom 3</th> -->
       </tr>
       <tr align="center">
         <td>1.</td>
         <td>David Bastian</td>
-        <td>100</td>
-        <td>100</td>
-        <td>100</td>
+        <td>13182420092</td>
+        <td>inforsmtika</td>
+        <td>davidbastian28@gmail.com</td>
+        <td>08123456789</td>
         <td>
           <img src="assets/images/david.jpg" alt="" width="70" height="45" />
         </td>
+        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
       </tr>
       <tr align="center">
         <td>2.</td>
         <td>sinta</td>
-        <td>10</td>
-        <td>0</td>
-        <td>5</td>
+        <td>13182420092</td>
+        <td>inforsmtika</td>
+        <td>sinta@gmail.com</td>
+        <td>08123453135</td>
         <td>
           <img
             src="https://th.bing.com/th/id/OIP.XlH8FaHUDaGaVvPWETDSaAHaEK?w=292&h=180&c=7&r=0&o=7&dpr=1.2&pid=1.7&rm=3"
@@ -59,13 +60,15 @@
             height="45"
           />
         </td>
+        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
       </tr>
       <tr align="center">
         <td>3.</td>
         <td>rama</td>
-        <td>20</td>
-        <td>30</td>
-        <td>15</td>
+        <td>13182420092</td>
+        <td>inforsmtika</td>
+        <td>dava@gmail.com</td>
+        <td>08123454226</td>
         <td>
           <img
             src="https://static.voices.com/wp-content/uploads/2022/09/mgid_arc_imageassetref_nick-e1672861268415.jpeg"
@@ -74,16 +77,19 @@
             height="45"
           />
         </td>
+        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
       </tr>
       <tr align="center">
         <td>4.</td>
         <td>alex</td>
-        <td>40</td>
-        <td>20</td>
-        <td>25</td>
+        <td>13182420324</td>
+        <td>inforsmtika</td>
+        <td>alex@gmail.com</td>
+        <td>0812343432</td>
         <td>
           <img src="assets/images/alex.jpeg" alt="" width="70" height="45" />
         </td>
+        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
       </tr>
     </table>
     <hr />
@@ -96,7 +102,7 @@
       </tr>
       <tr>
         <td>2,1</td>
-        <td rowspan="2" colspan="2" align="center"><h1>?</h1></td>
+        <td   align="center"><h1>?</h1></td>
         <!-- <td>2,3</td> -->
         <td>2,4</td>
       </tr>
