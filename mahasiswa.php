@@ -1,3 +1,36 @@
+<?php
+
+$koneksi = mysqli_connect('localhost', 'root', '', 'bstweekly');
+// if (!$koneksi) {
+//   die("koneksi gagal" . mysqli_connect_error());
+// }
+// else {
+//   echo "koneksi berhasil";
+// }
+
+$query = "SELECT * FROM mahasiswa";
+
+$result = mysqli_query($koneksi, $query); // lemari / zip
+
+// ambil data (fetch) mahasiswa dari lemari
+
+// while ($mhs = mysqli_fetch_row($result))
+// {
+//   var_dump($mhs);
+// }
+
+/// mysqli_fetch_row() - array numerik
+/// mysqli_fetch_assoc() - array asosiatif
+/// mysqli_fetch_array() - array numerik + array asosiatif
+/// mysqli_fetch_object() - object
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,91 +66,60 @@
         <th>aksi</th>
         <!-- <th>baris 1, kolom 2</th> -->
       </tr>
+      <?php
+      $no = 1; 
+        while($mhs = mysqli_fetch_assoc($result)) {
+
+      ?>
       <tr align="center">
-        <td>1.</td>
-        <td>David Bastian</td>
-        <td>13182420092</td>
-        <td>inforsmtika</td>
-        <td>davidbastian28@gmail.com</td>
-        <td>08123456789</td>
+        <td><?= $no ?></td>
+        <td><?= $mhs ["nama"] ?> </td>
+        <td><?= $mhs ["nim"] ?> </td>
+        <td><?= $mhs ["jurusan"] ?> </td>
+        <td><?= $mhs ["email"] ?> </td>
+        <td><?= $mhs ["no_hp"] ?></td>
         <td>
-          <img src="assets/images/david.jpg" alt="" width="70" height="45" />
+          <img src="assets/images/<?= $mhs ["foto"] ?>" width="70" height="45" />
         </td>
         <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
       </tr>
-      <tr align="center">
-        <td>2.</td>
-        <td>sinta</td>
-        <td>13182420092</td>
-        <td>inforsmtika</td>
-        <td>sinta@gmail.com</td>
-        <td>08123453135</td>
-        <td>
-          <img
-            src="https://th.bing.com/th/id/OIP.XlH8FaHUDaGaVvPWETDSaAHaEK?w=292&h=180&c=7&r=0&o=7&dpr=1.2&pid=1.7&rm=3"
-            alt=""
-            width="70"
-            height="45"
-          />
-        </td>
-        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
-      </tr>
-      <tr align="center">
-        <td>3.</td>
-        <td>rama</td>
-        <td>13182420092</td>
-        <td>inforsmtika</td>
-        <td>dava@gmail.com</td>
-        <td>08123454226</td>
-        <td>
-          <img
-            src="https://static.voices.com/wp-content/uploads/2022/09/mgid_arc_imageassetref_nick-e1672861268415.jpeg"
-            alt=""
-            width="70"
-            height="45"
-          />
-        </td>
-        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
-      </tr>
-      <tr align="center">
-        <td>4.</td>
-        <td>alex</td>
-        <td>13182420324</td>
-        <td>inforsmtika</td>
-        <td>alex@gmail.com</td>
-        <td>0812343432</td>
-        <td>
-          <img src="assets/images/alex.jpeg" alt="" width="70" height="45" />
-        </td>
-        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
-      </tr>
+      <?php
+        $no++;
+     } 
+     ?>
+      
     </table>
+
+
+
+
+    
     <hr />
-    <table border="1" cellspacing="0" cellpadding="15">
-      <tr>
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td>1,4</td>
-      </tr>
-      <tr>
-        <td>2,1</td>
-        <td   align="center"><h1>?</h1></td>
-        <!-- <td>2,3</td> -->
-        <td>2,4</td>
-      </tr>
-      <tr>
-        <td>3,1</td>
-        <!-- <td>3,2</td> -->
-        <!-- <td>3,3</td> -->
-        <td>3,4</td>
-      </tr>
-      <tr>
-        <td>4,1</td>
-        <td>4,2</td>
-        <td>4,3</td>
-        <td>4,4</td>
-      </tr>
-    </table>
+   <table border="1" cellspacing="0" cellpadding="15">
+  <tr>
+    <td>1,1</td>
+    <td>1,2</td>
+    <td>1,3</td>
+    <td>1,4</td>
+  </tr>
+  <tr>
+    <td>2,1</td>
+    <td colspan="2" rowspan="2" style="text-align:center; vertical-align:middle;">
+      <h1 style="font-size: 30px;">?</h1>
+    </td>
+    <td>2,4</td>
+  </tr>
+  <tr>
+    <td>3,1</td>
+    <td>3,4</td>
+  </tr>
+  <tr>
+    <td>4,1</td>
+    <td>4,2</td>
+    <td>4,3</td>
+    <td>4,4</td>
+  </tr>
+</table>
+
       </body>
 </html>
