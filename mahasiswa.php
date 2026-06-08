@@ -1,16 +1,7 @@
 <?php
-
-$koneksi = mysqli_connect('localhost', 'root', '', 'bstweekly');
-// if (!$koneksi) {
-//   die("koneksi gagal" . mysqli_connect_error());
-// }
-// else {
-//   echo "koneksi berhasil";
-// }
-
-$query = "SELECT * FROM mahasiswa";
-
-$result = mysqli_query($koneksi, $query); // lemari / zip
+require 'fungsi.php';
+$qmahasiswa = "SELECT * FROM mahasiswa";
+$mahasiswas = tampildata($qmahasiswa); /// menghasilkan data dalam wadah
 
 // ambil data (fetch) mahasiswa dari lemari
 
@@ -24,13 +15,8 @@ $result = mysqli_query($koneksi, $query); // lemari / zip
 /// mysqli_fetch_array() - array numerik + array asosiatif
 /// mysqli_fetch_object() - object
 
-
-
-
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,7 +54,8 @@ $result = mysqli_query($koneksi, $query); // lemari / zip
       </tr>
       <?php
       $no = 1; 
-        while($mhs = mysqli_fetch_assoc($result)) {
+        foreach ($mahasiswas as $mhs ) {
+          
 
       ?>
       <tr align="center">

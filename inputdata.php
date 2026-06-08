@@ -1,3 +1,27 @@
+<?php
+require 'fungsi.php';
+
+if (isset($_POST['submit'])) {
+    if(tambahdata($_POST) > 0) {
+        echo "<script>
+                alert('data berhasil ditambahkan');
+                window.location.href = 'mahasiswa.php';
+             </script>";
+    }
+    else
+    {
+        echo "<script>
+                alert('data gagal ditambahkan');
+                window.location.href = 'mahasiswa.php';
+             </script>";
+    }
+   
+}
+
+  
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -17,40 +41,46 @@
         <td> <a href="mahasiswa.php"> Data Mahasiswa </a></td>
       </tr>
     </table>
-    <h2>Input Nilai Mahasiswa</h2>
-    <form action="">
+    <h2>Input Data Mahasiswa</h2>
+    <form action="" method="post" >
         <table border="0" cellspacing="10">
             <tr>
                 <td><label for="nama">masukan nama</label></td>
                 <td>:</td>
-                <td><input type="text" name="nama" id="nama"></td>
+                <td><input type="text" name="nama" id="nama" required></td>
             </tr>
         <tr>
             <td>
-                <label for="UTS">UTS</label>
+                <label for="NIM">NIM</label>
             </td>
             <td>:</td>
-            <td><input type="number" name="UTS" id="UTS"></td>
+            <td><input type="number" name="nim" id="NIM" required></td>
         </tr>
         <tr>
             <td>
-                <label for="UAS">UAS</label>
+                <label for="prodi">Program Studi</label>
             </td>
             <td>:</td>
-            <td><input type="number" name="UAS" id="UAS"></td>
+            <td><input type="text" name="jurusan" id="prodi" required></td>
         </tr>
         <tr>
-            <td><label for="TUGAS">TUGAS</label></td>
+            <td><label for="email">Email</label></td>
             <td>:</td>
-            <td><input type="number" name="TUGAS" id="TUGAS"></label></td>
+            <td><input type="email" name="email" id="email"></label></td>
         </tr>
         <tr>
-            <td><label for="Foto">Foto</label></td>
+            <td><label for="nohp">No. HP</label></td>
             <td>:</td>
-            <td><input type="file" name="Foto" id="Foto"></label></td>
+            <td><input type="number" name="no_hp" id="nohp"></label></td>
+        </tr>
+        <tr>
+            <td><label for="foto">foto</label></td>
+            <td>:</td>
+            <td><input type="text" name="foto" id="foto"></label></td>
         </tr>
         </table>
-        <input type="submit" name="submit" value="kirim Data">
+        <button type="submit" name="submit" > kirim Data</button>
+        
     </form>
     <hr>
 
