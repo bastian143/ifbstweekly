@@ -68,7 +68,9 @@ $mahasiswas = tampildata($qmahasiswa); /// menghasilkan data dalam wadah
         <td>
           <img src="assets/images/<?= $mhs ["foto"] ?>" width="70" height="45" />
         </td>
-        <td><a href="ubahdata.php"><button>Edit</button></a> | <a href="hapusdata.php"><button>Hapus</button></a></td>
+        <td><a href="ubahdata.php?id=<?= $mhs ["id"] ?>"><button>Edit </button></a>
+         | 
+         <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('yakinnn?')"><button>Hapus</button></a></td>
       </tr>
       <?php
         $no++;
