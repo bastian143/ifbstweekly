@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
   <body>
     <h1>WEB INFORMATIKA BST 2026</h1>
     <hr />
-     <table border="1" cellspacing="0" cellpadding="10">
+     <table border="1" cellspacing="0" cellpadding="10" class="navbar">
       <tr>
         <td><a href="index.php"> Home </a></td>
         <td><a href="profile.php">Profil</a></td>

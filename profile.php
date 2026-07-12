@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil Saya - Tingkat 1</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>WEB INFORMATIKA BST 2026</h1>
     <hr />
-     <table border="1" cellspacing="0" cellpadding="10">
+     <table border="1" cellspacing="0" cellpadding="10" class="navbar">
       <tr>
         <td><a href="index.php"> Home </a></td>
         <td><a href="profile.php">Profil</a></td>

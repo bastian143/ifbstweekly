@@ -1,5 +1,12 @@
 <?php
 require 'fungsi.php';
+
+// halaman ini hanya boleh diakses kalau sudah login
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $qmahasiswa = "SELECT * FROM mahasiswa";
 $mahasiswas = tampildata($qmahasiswa); /// menghasilkan data dalam wadah
 
@@ -23,24 +30,26 @@ $mahasiswas = tampildata($qmahasiswa); /// menghasilkan data dalam wadah
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Mahasiswa | WEB INFORMATIKA 2026</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>WEB INFORMATIKA BST 2026</h1>
     <hr />
-    <table border="1" cellspacing="0" cellpadding="10">
+    <table border="1" cellspacing="0" cellpadding="10" class="navbar">
       <tr>
         <td><a href="index.php"> Home </a></td>
         <td><a href="profile.php">Profil</a></td>
         <td><a href="contact.php">Contact </a></td>
         <td><a href="mahasiswa.php"> Data Mahasiswa </a></td>
+        <td><a href="logout.php">Logout (<?= $_SESSION['nama'] ?>)</a></td>
       </tr>
     </table>
     <h3>data mahasiswa</h3>
 
-    <a href="inputdata.php"><button>Tambah Data Mahasiswa</button></a>
+    <a href="inputdata.php"><button class="btn-tambah">Tambah Data Mahasiswa</button></a>
 <br>
     <br>
-    <table border="1" cellspadding="10">
+    <table border="1" cellspadding="10" class="tabel-data">
       <tr>
         <th >No</th>
         <th >Nama</th>
@@ -68,9 +77,9 @@ $mahasiswas = tampildata($qmahasiswa); /// menghasilkan data dalam wadah
         <td>
           <img src="assets/images/<?= $mhs ["foto"] ?>" width="70" height="45" />
         </td>
-        <td><a href="ubahdata.php?id=<?= $mhs ["id"] ?>"><button>Edit </button></a>
+        <td><a href="ubahdata.php?id=<?= $mhs ["id"] ?>"><button class="btn-edit">Edit </button></a>
          | 
-         <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('yakinnn?')"><button>Hapus</button></a></td>
+         <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('yakinnn?')"><button class="btn-hapus">Hapus</button></a></td>
       </tr>
       <?php
         $no++;
